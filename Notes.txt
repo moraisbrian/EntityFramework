@@ -1,0 +1,4 @@
+//Instalação dos pacotes do EntityFramework
+//Necessario ter a referencia System.Data.Entity
+install-package entityframework
+
