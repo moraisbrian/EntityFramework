@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaOdonto", "SistemaOdonto\SistemaOdonto.csproj", "{4F5DE735-F5CC-4123-8255-559736EC322A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "View", "View", "{383133D8-074C-4DC1-8471-2D413676BB73}"
+	ProjectSection(SolutionItems) = preProject
+		Controllers\Migrations\Configuration.cs = Controllers\Migrations\Configuration.cs
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{C047A022-52C0-4648-800E-1833C7DE5C85}"
 EndProject

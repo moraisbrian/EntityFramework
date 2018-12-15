@@ -52,10 +52,14 @@
     <Compile Include="Map\ConsultaMap.cs" />
     <Compile Include="Map\DentistaMap.cs" />
     <Compile Include="Map\PacienteMap.cs" />
+    <Compile Include="Migrations\201812151458459_banco.cs" />
+    <Compile Include="Migrations\201812151458459_banco.Designer.cs">
+      <DependentUpon>201812151458459_banco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Migrations\" />
     <Folder Include="Repositorio\" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +71,11 @@
       <Project>{dab559c9-e479-42bd-a9af-51206877eaf0}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812151458459_banco.resx">
+      <DependentUpon>201812151458459_banco.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

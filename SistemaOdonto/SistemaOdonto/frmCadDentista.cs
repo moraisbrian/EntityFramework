@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaOdonto
 {
-    public partial class Form1 : Form
+    public partial class frmCadDentista : Form
     {
-        public Form1()
+        public frmCadDentista()
         {
             InitializeComponent();
         }
