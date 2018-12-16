@@ -89,6 +89,7 @@
             this.btnEditar.Size = new System.Drawing.Size(63, 64);
             this.btnEditar.TabIndex = 30;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -102,6 +103,7 @@
             this.btnExcluir.Size = new System.Drawing.Size(62, 64);
             this.btnExcluir.TabIndex = 29;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // panel1
             // 
