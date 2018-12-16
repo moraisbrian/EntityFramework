@@ -102,19 +102,20 @@
             // menuAgDentistas
             // 
             this.menuAgDentistas.Name = "menuAgDentistas";
-            this.menuAgDentistas.Size = new System.Drawing.Size(126, 22);
+            this.menuAgDentistas.Size = new System.Drawing.Size(180, 22);
             this.menuAgDentistas.Text = "Dentistas";
+            this.menuAgDentistas.Click += new System.EventHandler(this.menuAgDentistas_Click);
             // 
             // menuAgPacientes
             // 
             this.menuAgPacientes.Name = "menuAgPacientes";
-            this.menuAgPacientes.Size = new System.Drawing.Size(126, 22);
+            this.menuAgPacientes.Size = new System.Drawing.Size(180, 22);
             this.menuAgPacientes.Text = "Pacientes";
             // 
             // menuAgConsultas
             // 
             this.menuAgConsultas.Name = "menuAgConsultas";
-            this.menuAgConsultas.Size = new System.Drawing.Size(126, 22);
+            this.menuAgConsultas.Size = new System.Drawing.Size(180, 22);
             this.menuAgConsultas.Text = "Consultas";
             // 
             // MAjuda
@@ -153,7 +154,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 299);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";

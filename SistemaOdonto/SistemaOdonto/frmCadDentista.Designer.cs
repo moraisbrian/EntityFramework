@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadDentista));
-            this.lblCod = new System.Windows.Forms.Label();
-            this.lblCodValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,31 +41,13 @@
             this.txtCro = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusMsg = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ts = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsNenhuma = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnConsulta = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblCod
-            // 
-            this.lblCod.AutoSize = true;
-            this.lblCod.Location = new System.Drawing.Point(80, 51);
-            this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(43, 13);
-            this.lblCod.TabIndex = 0;
-            this.lblCod.Text = "Código:";
-            // 
-            // lblCodValor
-            // 
-            this.lblCodValor.AutoSize = true;
-            this.lblCodValor.Location = new System.Drawing.Point(131, 51);
-            this.lblCodValor.Name = "lblCodValor";
-            this.lblCodValor.Size = new System.Drawing.Size(19, 13);
-            this.lblCodValor.TabIndex = 1;
-            this.lblCodValor.Text = "01";
             // 
             // label1
             // 
@@ -135,6 +115,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(151, 20);
             this.txtTelefone.TabIndex = 9;
+            this.txtTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtCelular
             // 
@@ -143,6 +124,7 @@
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(151, 20);
             this.txtCelular.TabIndex = 10;
+            this.txtCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtCro
             // 
@@ -151,6 +133,7 @@
             this.txtCro.Name = "txtCro";
             this.txtCro.Size = new System.Drawing.Size(151, 20);
             this.txtCro.TabIndex = 11;
+            this.txtCro.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // panel1
             // 
@@ -167,37 +150,12 @@
             this.btnSalvar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(193, 313);
+            this.btnSalvar.Location = new System.Drawing.Point(227, 313);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(62, 64);
             this.btnSalvar.TabIndex = 13;
             this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExcluir.BackgroundImage")));
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(452, 313);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(62, 64);
-            this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(322, 313);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(63, 64);
-            this.btnEditar.TabIndex = 15;
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // statusStrip1
             // 
@@ -206,34 +164,62 @@
             this.statusStrip1.AutoSize = false;
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatus,
-            this.toolStripStatusMsg});
+            this.ts,
+            this.tsNenhuma});
             this.statusStrip1.Location = new System.Drawing.Point(9, 419);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(782, 22);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatus
+            // ts
             // 
-            this.toolStripStatus.Name = "toolStripStatus";
-            this.toolStripStatus.Size = new System.Drawing.Size(69, 17);
-            this.toolStripStatus.Text = "Mensagem:";
+            this.ts.Name = "ts";
+            this.ts.Size = new System.Drawing.Size(69, 17);
+            this.ts.Text = "Mensagem:";
             // 
-            // toolStripStatusMsg
+            // tsNenhuma
             // 
-            this.toolStripStatusMsg.Name = "toolStripStatusMsg";
-            this.toolStripStatusMsg.Size = new System.Drawing.Size(54, 17);
-            this.toolStripStatusMsg.Text = "Nenhum";
+            this.tsNenhuma.Name = "tsNenhuma";
+            this.tsNenhuma.Size = new System.Drawing.Size(60, 17);
+            this.tsNenhuma.Text = "Nenhuma";
+            // 
+            // btnConsulta
+            // 
+            this.btnConsulta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnConsulta.BackgroundImage")));
+            this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsulta.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsulta.Location = new System.Drawing.Point(322, 313);
+            this.btnConsulta.Name = "btnConsulta";
+            this.btnConsulta.Size = new System.Drawing.Size(62, 64);
+            this.btnConsulta.TabIndex = 17;
+            this.btnConsulta.UseVisualStyleBackColor = true;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpar.BackgroundImage")));
+            this.btnLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpar.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            this.btnLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(430, 313);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(62, 64);
+            this.btnLimpar.TabIndex = 18;
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // frmCadDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.btnConsulta);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCro);
@@ -246,8 +232,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblCodValor);
-            this.Controls.Add(this.lblCod);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -264,9 +248,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCod;
-        private System.Windows.Forms.Label lblCodValor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -279,10 +260,10 @@
         private System.Windows.Forms.MaskedTextBox txtCro;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnExcluir;
-        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusMsg;
+        private System.Windows.Forms.ToolStripStatusLabel ts;
+        private System.Windows.Forms.ToolStripStatusLabel tsNenhuma;
+        private System.Windows.Forms.Button btnConsulta;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
